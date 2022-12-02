@@ -1,0 +1,11 @@
+{
+  "name": "advent-of-code",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.2.0"
+  },
+  "scripts": {
+    "start": "bun run index.ts"
+  }
+}
