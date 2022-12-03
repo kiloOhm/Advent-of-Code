@@ -5,5 +5,5 @@ const year = (args.length === 1)
   : new Date().getFullYear();
 
 import(`${import.meta.dir}/${year}/index.ts`).then((solution) => {
-  solution?.();
+  solution?.default();
 });

@@ -3,9 +3,13 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "bun-types": "^0.2.0"
   },
   "scripts": {
     "start": "bun run index.ts"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
