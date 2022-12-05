@@ -1,20 +1,16 @@
 import { readFile } from 'fs/promises';
 
 export default async function() {
+  const lines = (await readFile(import.meta.dir + '/input.txt', {
+    encoding: 'utf-8',
+  })).split('\n');
   return await Promise.all([
-    part1(),
-    part2(),
+    part1(lines),
+    part2(lines),
   ]);
 }
 
-async function getLines() {
-  return (await readFile(import.meta.dir + '/input.txt', {
-    encoding: 'utf-8',
-  })).split('\n');
-}
-
-async function part1() {
-  const lines = await getLines();
+async function part1(lines: string[]) {
   let bestElf = 0;
   let currentElf = 0;
   for(const line of lines) {
@@ -30,8 +26,7 @@ async function part1() {
   return bestElf;
 }
 
-async function part2() {
-  const lines = await getLines();
+async function part2(lines: string[]) {
   let bestElves: number[] = [];
   let currentElf = 0;
   for(const line of lines) {

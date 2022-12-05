@@ -1,20 +1,16 @@
 import { readFile } from 'fs/promises';
 
 export default async function() {
+  const lines = (await readFile(import.meta.dir + '/input.txt', {
+    encoding: 'utf-8',
+  })).split('\n');
   return await Promise.all([
-    part1(),
-    part2(),
+    part1(lines),
+    part2(lines),
   ]);
 }
 
-async function getLines() {
-  return (await readFile(import.meta.dir + '/input.txt', {
-    encoding: 'utf-8',
-  })).split('\n');
-}
-
-async function part1() {
-  const lines = await getLines();
+async function part1(lines: string[]) {
   let score = 0;
   for(const [i, line] of lines.entries()) {
     const [opponent, me] = line.split(' ');
@@ -23,8 +19,7 @@ async function part1() {
   return score;
 }
 
-async function part2() {
-  const lines = await getLines();
+async function part2(lines: string[]) {
   let score = 0;
   for(const [i, line] of lines.entries()) {
     const [opponent, me] = line.split(' ');
