@@ -1,7 +1,9 @@
 import { readFile } from 'fs/promises';
 
+let example = false;
+
 export default async function() {
-  const lines = (await readFile(import.meta.dir + '/input.txt', {
+  const lines = (await readFile(import.meta.dir + ( example ? '/example.txt' : '/input.txt'), {
     encoding: 'utf-8',
   })).split('\n');
   return await Promise.all([
