@@ -98,6 +98,7 @@ function buildFSTree(lines: string[]) {
           }
         break;
         case 'ls':
+          // do nothing
         break;
       }
     } else if(parsed.dir) {
