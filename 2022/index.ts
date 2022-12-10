@@ -2,7 +2,7 @@ import { readdir } from "fs/promises"
 const year = 2022;
 const dirs = await readdir(import.meta.dir, { withFileTypes: true });
 const days = dirs.filter((dir) => dir.isDirectory()).map((dir) => dir.name)
-  .sort((a, b) => a.slice(-1).charCodeAt(0) - b.slice(-1).charCodeAt(0));
+  .sort((a, b) => Number(a.slice(3)) - Number(b.slice(3)));
 const solutions = await Promise.all(days.map((day) => import(`${import.meta.dir}/${day}/index.ts`)));
 
 try {

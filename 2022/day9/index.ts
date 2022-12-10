@@ -29,7 +29,6 @@ async function part2(lines: string[]) {
     const steps = parseInt(_steps);
     rope.head.travel(direction, steps);
   }
-  console.log(rope.tail.visited);
   return rope.tail.visited.size;
 }
 
